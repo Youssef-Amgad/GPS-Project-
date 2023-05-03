@@ -1,0 +1,17 @@
+.\gpio.o: gpio.c
+.\gpio.o: microconfig.h
+.\gpio.o: C:\Keil\ARM\ARMCC\bin\..\include\stdbool.h
+.\gpio.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h
+.\gpio.o: C:\Keil\ARM\ARMCC\bin\..\include\stdio.h
+.\gpio.o: C:\Keil\ARM\ARMCC\bin\..\include\stdlib.h
+.\gpio.o: C:\Keil\ARM\ARMCC\bin\..\include\inttypes.h
+.\gpio.o: C:\Keil\ARM\ARMCC\bin\..\include\stdarg.h
+.\gpio.o: C:\Keil\ARM\ARMCC\bin\..\include\string.h
+.\gpio.o: C:\Keil\ARM\ARMCC\bin\..\include\math.h
+.\gpio.o: tm4c123gh6pm.h
+.\gpio.o: gpio.h
+.\gpio.o: microconfig.h
+.\gpio.o: systick.h
+.\gpio.o: lcd.h
+.\gpio.o: uart.h
+.\gpio.o: gps.h

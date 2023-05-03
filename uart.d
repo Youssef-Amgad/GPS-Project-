@@ -1,0 +1,17 @@
+.\uart.o: uart.c
+.\uart.o: microconfig.h
+.\uart.o: C:\Keil\ARM\ARMCC\bin\..\include\stdbool.h
+.\uart.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h
+.\uart.o: C:\Keil\ARM\ARMCC\bin\..\include\stdio.h
+.\uart.o: C:\Keil\ARM\ARMCC\bin\..\include\stdlib.h
+.\uart.o: C:\Keil\ARM\ARMCC\bin\..\include\inttypes.h
+.\uart.o: C:\Keil\ARM\ARMCC\bin\..\include\stdarg.h
+.\uart.o: C:\Keil\ARM\ARMCC\bin\..\include\string.h
+.\uart.o: C:\Keil\ARM\ARMCC\bin\..\include\math.h
+.\uart.o: tm4c123gh6pm.h
+.\uart.o: gpio.h
+.\uart.o: microconfig.h
+.\uart.o: systick.h
+.\uart.o: lcd.h
+.\uart.o: uart.h
+.\uart.o: gps.h

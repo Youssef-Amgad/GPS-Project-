@@ -1,0 +1,17 @@
+.\systick.o: systick.c
+.\systick.o: microconfig.h
+.\systick.o: C:\Keil\ARM\ARMCC\bin\..\include\stdbool.h
+.\systick.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h
+.\systick.o: C:\Keil\ARM\ARMCC\bin\..\include\stdio.h
+.\systick.o: C:\Keil\ARM\ARMCC\bin\..\include\stdlib.h
+.\systick.o: C:\Keil\ARM\ARMCC\bin\..\include\inttypes.h
+.\systick.o: C:\Keil\ARM\ARMCC\bin\..\include\stdarg.h
+.\systick.o: C:\Keil\ARM\ARMCC\bin\..\include\string.h
+.\systick.o: C:\Keil\ARM\ARMCC\bin\..\include\math.h
+.\systick.o: tm4c123gh6pm.h
+.\systick.o: gpio.h
+.\systick.o: microconfig.h
+.\systick.o: systick.h
+.\systick.o: lcd.h
+.\systick.o: uart.h
+.\systick.o: gps.h
