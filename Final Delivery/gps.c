@@ -1,6 +1,6 @@
 #include "microconfig.h"
 const double EARTH_RADIUS = 6371000 ;
-//in meters
+//in meters 
 char string[10];   
 
 char GPS [100];     //34an GPS i will pass a lot of values in it as mentioned in serial monitor
