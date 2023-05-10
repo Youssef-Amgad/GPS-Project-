@@ -1,3 +1,89 @@
+#include "microconfig.h"
+#include "tm4c123gh6pm.h"
+#include "TM4C123.h"    // Device header
+
+char switches,h,k;
+double distance,total_distance;
+char* str;
+char* klam;
+char c;
+
+
+
+void float_to_char_array(float value, char* char_array, int array_size) {
+    // Format the float value as a string and store it in char_array
+    sprintf(char_array, "%f", value);
+}
+
+int main()
+	 {	  
+		
+		float current_lat=0,current_long=0;
+    float previous_lat=0,previous_long=0;
+		float test_lat=0,test_long=0;
+		float final_lat=0,final_long=0;
+		char result[16]; 
+		c = 0x0;
+		distance=0;
+		total_distance=0;
+		k=0;
+		h=0; 
+		// initialization ports
+    init_PORT_F();
+		init_PORT_B();
+		SysTick_Init();
+		UART5_init();
+		lcd_init();
+		RGB_Output(0x02);
+		
+	 while(1){ 
+		 if(k==0)
+		 {
+			 str = "LOADING...";
+			 lcd_cmd(lcd_Clear);
+			 delay_ms(500);
+			 lcd_str(str);
+			 delay_ms(500);
+		 }
+		 while (c != 0x01)   //to stop program until gps read valid readings
+		 {
+			 test_lat = GPS_read_lat();
+		   test_long = GPS_read_long();
+			 k=1;
+		 }
+		 delay_ms(1000);			 		 
+		 switches = SW_input();
+		 if( switches == 0x10 ){
+		   c=0x0;
+			 while (c != 0x01)
+		 {
+		   final_long = GPS_read_long();
+		 }
+		 c=0x0;
+		 	 while (c != 0x01)
+		 {
+			 final_lat = GPS_read_lat();
+		 }
+			 h = 1; //flag
+		 }
+		 if (h == 1){
+			 str = "press switch 1";
+			 delay_ms(500);
+			 lcd_cmd(lcd_Clear);
+			 lcd_str(str);
+			 str = "to start";
+			 lcd_str_2nd_row(str);
+			 
+		  }else if ( h == 0 ){
+		   str = "press switch 2";
+			 lcd_cmd(lcd_Clear);
+			 delay_ms(500);
+       lcd_str(str);
+		   str ="to save final pt";
+			 lcd_str_2nd_row(str);
+		   delay_ms(500);
+			}
+
 		 if(switches == 0x01){
 			 
 			 total_distance = 0;
