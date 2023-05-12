@@ -77,7 +77,7 @@
 #define INT_COMP1               42          // Analog Comparator 1
 #define INT_SYSCTL              44          // System Control
 #define INT_FLASH               45          // Flash Memory Control and EEPROM
-                                            // Control
+                                            // Control //
 #define INT_GPIOF               46          // GPIO Port F
 #define INT_UART2               49          // UART2
 #define INT_SSI1                50          // SSI1
@@ -128,11 +128,11 @@
 #define INT_PWM1_3              153         // PWM1 Generator 3
 #define INT_PWM1_FAULT          154         // PWM1 Fault
 
-//*****************************************************************************
+//************************************************************************************
 //
 // Watchdog Timer registers (WATCHDOG0)
 //
-//*****************************************************************************
+//************************************************************************************
 #define WATCHDOG0_LOAD_R        (*((volatile uint32_t *)0x40000000))
 #define WATCHDOG0_VALUE_R       (*((volatile uint32_t *)0x40000004))
 #define WATCHDOG0_CTL_R         (*((volatile uint32_t *)0x40000008))
