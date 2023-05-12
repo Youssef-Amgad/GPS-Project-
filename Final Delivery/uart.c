@@ -54,3 +54,49 @@ char UART_recieveByte(int num)
 			return 0;
 		}
 }
+
+void UART5_transmit(char data)   //output function (transmitter)
+{
+	while ((UART5_FR_R & 0X20) != 0);   //not full execute
+	UART5_DR_R = data;	
+}
+void UART5_OutString(char *pt)
+{
+	while (*pt)
+	{
+		UART5_transmit(*pt);
+		pt++;
+	}
+}
+
+void UART_OutChar(char data)
+{
+while ((UART0_FR_R & 0X0020) != 0);
+UART0_DR_R = data;
+}
+void UART_OutString(char *pt)
+{
+while (*pt)
+{
+UART_OutChar(*pt);
+pt++;
+}
+}
+
+void UART_Init(unsigned clk, unsigned baudrate)//should be called only once
+{
+unsigned BRD;
+SYSCTL_RCGCUART_R |=0X0001; //active UART0
+SYSCTL_RCGCGPIO_R |=0X0001; //activate port A
+while ((SYSCTL_PRGPIO_R&0X01)==0){};
+UART0_CTL_R&=~0X0001;
+BRD=((clk<<2)+(baudrate<<1))/baudrate;
+UART0_IBRD_R = BRD>>6;
+UART0_FBRD_R = BRD&63;
+UART0_LCRH_R = 0X0070;
+UART0_CTL_R = 0X0301;
+GPIO_PORTA_AFSEL_R |=0X03;
+GPIO_PORTA_PCTL_R = (GPIO_PORTA_PCTL_R&0XFFFFFF00)|0X00000011; //configureUART for PA0,PA1
+GPIO_PORTA_DEN_R |=0X03;
+GPIO_PORTA_AMSEL_R &=~0X03;
+}
