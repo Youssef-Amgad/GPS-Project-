@@ -47,3 +47,6 @@ return (GPIO_PORTF_DATA_R&0x11); // read PF4,PF0 0001 0000
 void RGB_Output(uint32_t data){ // write PF3-PF1 outputs 
 	GPIO_PORTF_DATA_R = data;
 }
+
+
+// gpio code 
